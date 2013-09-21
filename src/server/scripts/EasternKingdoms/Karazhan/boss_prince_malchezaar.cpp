@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  * Copyright (C) 2006-2009 ScriptDev2 <https://scriptdev2.svn.sourceforge.net/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -364,7 +364,7 @@ public:
                 me->GetRandomNearPosition(pos, 60);
             else
             {
-                point = Trinity::Containers::SelectRandomContainerElement(positions);
+                point = ORIGIN::Containers::SelectRandomContainerElement(positions);
                 pos.Relocate(point->x, point->y, INFERNAL_Z, frand(0.0f, float(M_PI * 2)));
             }
 

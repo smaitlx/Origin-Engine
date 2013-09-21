@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -21,6 +21,7 @@
 
 #include "Common.h"
 #include "Database/DatabaseEnv.h"
+#include "Database/QueryResult.h"
 #include "ByteBuffer.h"
 #include "Configuration/Config.h"
 #include "Log.h"
@@ -308,7 +309,7 @@ bool AuthSocket::_HandleLogonChallenge()
 
     socket().recv((char *)&buf[0], 4);
 
-#if TRINITY_ENDIAN == TRINITY_BIGENDIAN
+#if ORIGIN_ENDIAN == ORIGIN_BIGENDIAN
     EndianConvert(*((uint16*)(buf[0])));
 #endif
 
@@ -330,7 +331,7 @@ bool AuthSocket::_HandleLogonChallenge()
 
     // BigEndian code, nop in little endian case
     // size already converted
-#if TRINITY_ENDIAN == TRINITY_BIGENDIAN
+#if ORIGIN_ENDIAN == ORIGIN_BIGENDIAN
     EndianConvert(*((uint32*)(&ch->gamename[0])));
     EndianConvert(ch->build);
     EndianConvert(*((uint32*)(&ch->platform[0])));
@@ -770,7 +771,7 @@ bool AuthSocket::_HandleReconnectChallenge()
 
     socket().recv((char *)&buf[0], 4);
 
-#if TRINITY_ENDIAN == TRINITY_BIGENDIAN
+#if ORIGIN_ENDIAN == ORIGIN_BIGENDIAN
     EndianConvert(*((uint16*)(buf[0])));
 #endif
 

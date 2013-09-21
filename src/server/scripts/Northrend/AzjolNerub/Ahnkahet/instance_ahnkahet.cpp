@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -223,7 +223,7 @@ class instance_ahnkahet : public InstanceMapScript
                         if (vInitiands.empty())
                             return 0;
 
-                        return Trinity::Containers::SelectRandomContainerElement(vInitiands);
+                        return ORIGIN::Containers::SelectRandomContainerElement(vInitiands);
                     }
                     case DATA_ADD_JEDOGA_OPFER:
                         return JedogaSacrifices;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -2259,7 +2259,7 @@ class Unit : public WorldObject
         time_t _lastDamagedTime; // Part of Evade mechanics
 };
 
-namespace Trinity
+namespace ORIGIN
 {
     // Binary predicate for sorting Units based on percent value of a power
     class PowerPctOrderPred

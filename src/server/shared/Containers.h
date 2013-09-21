@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -15,8 +15,8 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TRINITY_CONTAINERS_H
-#define TRINITY_CONTAINERS_H
+#ifndef ORIGIN_CONTAINERS_H
+#define ORIGIN_CONTAINERS_H
 
 #include "Define.h"
 #include <list>
@@ -24,7 +24,7 @@
 //! Because circular includes are bad
 extern uint32 urand(uint32 min, uint32 max);
 
-namespace Trinity
+namespace ORIGIN
 {
     namespace Containers
     {
@@ -67,6 +67,6 @@ namespace Trinity
     }
     //! namespace Containers
 }
-//! namespace Trinity
+//! namespace ORIGIN
 
-#endif //! #ifdef TRINITY_CONTAINERS_H
+#endif //! #ifdef ORIGIN_CONTAINERS_H

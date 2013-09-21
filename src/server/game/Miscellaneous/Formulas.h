@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -16,15 +16,15 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TRINITY_FORMULAS_H
-#define TRINITY_FORMULAS_H
+#ifndef ORIGIN_FORMULAS_H
+#define ORIGIN_FORMULAS_H
 
 #include "World.h"
 #include "SharedDefines.h"
 #include "ScriptMgr.h"
 #include "Player.h"
 
-namespace Trinity
+namespace ORIGIN
 {
     namespace Honor
     {
@@ -39,7 +39,7 @@ namespace Trinity
         {
             return uint32(ceil(hk_honor_at_level_f(level, multiplier)));
         }
-    } // namespace Trinity::Honor
+    } // namespace ORIGIN::Honor
 
     namespace XP
     {
@@ -220,7 +220,7 @@ namespace Trinity
             sScriptMgr->OnGroupRateCalculation(rate, count, isRaid);
             return rate;
         }
-    } // namespace Trinity::XP
-} // namespace Trinity
+    } // namespace ORIGIN::XP
+} // namespace ORIGIN
 
 #endif

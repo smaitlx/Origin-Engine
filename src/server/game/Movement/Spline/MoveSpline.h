@@ -16,8 +16,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef TRINITYSERVER_MOVEPLINE_H
-#define TRINITYSERVER_MOVEPLINE_H
+#ifndef ORIGINSERVER_MOVEPLINE_H
+#define ORIGINSERVER_MOVEPLINE_H
 
 #include "Spline.h"
 #include "MoveSplineInitArgs.h"
@@ -125,4 +125,4 @@ namespace Movement
         std::string ToString() const;
     };
 }
-#endif // TRINITYSERVER_MOVEPLINE_H
+#endif // ORIGINSERVER_MOVEPLINE_H

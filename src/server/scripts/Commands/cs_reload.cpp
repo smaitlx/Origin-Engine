@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -153,7 +153,7 @@ public:
             { "spell_target_position",         RBAC_PERM_COMMANDS_RELOAD_SPELL_TARGET_POSITION, true,  &HandleReloadSpellTargetPositionCommand,        "", NULL },
             { "spell_threats",                 RBAC_PERM_COMMANDS_RELOAD_SPELL_THREATS, true,  &HandleReloadSpellThreatsCommand,               "", NULL },
             { "spell_group_stack_rules",       RBAC_PERM_COMMANDS_RELOAD_SPELL_GROUP_STACK_RULES, true,  &HandleReloadSpellGroupStackRulesCommand,       "", NULL },
-            { "trinity_string",                RBAC_PERM_COMMANDS_RELOAD_TRINITY_STRING, true,  &HandleReloadTrinityStringCommand,              "", NULL },
+            { "ORIGIN_string",                RBAC_PERM_COMMANDS_RELOAD_ORIGIN_STRING, true,  &HandleReloadORIGINStringCommand,              "", NULL },
             { "warden_action",                 RBAC_PERM_COMMANDS_RELOAD_WARDEN_ACTION, true,  &HandleReloadWardenactionCommand,               "", NULL },
             { "waypoint_scripts",              RBAC_PERM_COMMANDS_RELOAD_WAYPOINT_SCRIPTS, true,  &HandleReloadWpScriptsCommand,                  "", NULL },
             { "waypoint_data",                 RBAC_PERM_COMMANDS_RELOAD_WAYPOINT_DATA, true,  &HandleReloadWpCommand,                         "", NULL },
@@ -195,7 +195,7 @@ public:
         HandleReloadMailLevelRewardCommand(handler, "");
         HandleReloadCommandCommand(handler, "");
         HandleReloadReservedNameCommand(handler, "");
-        HandleReloadTrinityStringCommand(handler, "");
+        HandleReloadORIGINStringCommand(handler, "");
         HandleReloadGameTeleCommand(handler, "");
 
         HandleReloadCreatureSummonGroupsCommand(handler, "");
@@ -730,11 +730,11 @@ public:
         return true;
     }
 
-    static bool HandleReloadTrinityStringCommand(ChatHandler* handler, const char* /*args*/)
+    static bool HandleReloadORIGINStringCommand(ChatHandler* handler, const char* /*args*/)
     {
-        TC_LOG_INFO(LOG_FILTER_GENERAL, "Re-Loading trinity_string Table!");
-        sObjectMgr->LoadTrinityStrings();
-        handler->SendGlobalGMSysMessage("DB table `trinity_string` reloaded.");
+        TC_LOG_INFO(LOG_FILTER_GENERAL, "Re-Loading ORIGIN_string Table!");
+        sObjectMgr->LoadORIGINStrings();
+        handler->SendGlobalGMSysMessage("DB table `ORIGIN_string` reloaded.");
         return true;
     }
 

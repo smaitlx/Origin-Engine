@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -428,8 +428,8 @@ public:
             return false;
         }
 
-        char const* talentStr = handler->GetTrinityString(LANG_TALENT);
-        char const* passiveStr = handler->GetTrinityString(LANG_PASSIVE);
+        char const* talentStr = handler->GetORIGINString(LANG_TALENT);
+        char const* passiveStr = handler->GetORIGINString(LANG_PASSIVE);
 
         Unit::AuraApplicationMap const& auras = unit->GetAppliedAuras();
         handler->PSendSysMessage(LANG_COMMAND_TARGET_LISTAURAS, auras.size());

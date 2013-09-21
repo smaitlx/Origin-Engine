@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -58,7 +58,7 @@ public:
         GameEventMgr::GameEventDataMap const& events = sGameEventMgr->GetEventMap();
         GameEventMgr::ActiveEvents const& activeEvents = sGameEventMgr->GetActiveEventList();
 
-        char const* active = handler->GetTrinityString(LANG_ACTIVE);
+        char const* active = handler->GetORIGINString(LANG_ACTIVE);
 
         for (GameEventMgr::ActiveEvents::const_iterator itr = activeEvents.begin(); itr != activeEvents.end(); ++itr)
         {
@@ -111,7 +111,7 @@ public:
 
         GameEventMgr::ActiveEvents const& activeEvents = sGameEventMgr->GetActiveEventList();
         bool active = activeEvents.find(eventId) != activeEvents.end();
-        char const* activeStr = active ? handler->GetTrinityString(LANG_ACTIVE) : "";
+        char const* activeStr = active ? handler->GetORIGINString(LANG_ACTIVE) : "";
 
         std::string startTimeStr = TimeToTimestampStr(eventData.start);
         std::string endTimeStr = TimeToTimestampStr(eventData.end);

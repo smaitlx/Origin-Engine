@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -56,7 +56,7 @@ class DatabaseWorkerPool
             _connections.resize(IDX_SIZE);
 
             WPFatal(mysql_thread_safe(), "Used MySQL library isn't thread-safe.");
-            WPFatal(mysql_get_client_version() >= MIN_MYSQL_CLIENT_VERSION, "TrinityCore does not support MySQL versions below 5.1");
+            WPFatal(mysql_get_client_version() >= MIN_MYSQL_CLIENT_VERSION, "OriginEngine does not support MySQL versions below 5.1");
         }
 
         ~DatabaseWorkerPool()
@@ -78,7 +78,7 @@ class DatabaseWorkerPool
                 T* t = new T(_queue, _connectionInfo);
                 res &= t->Open();
                 if (res) // only check mysql version if connection is valid
-                    WPFatal(mysql_get_server_version(t->GetHandle()) >= MIN_MYSQL_SERVER_VERSION, "TrinityCore does not support MySQL versions below 5.1");
+                    WPFatal(mysql_get_server_version(t->GetHandle()) >= MIN_MYSQL_SERVER_VERSION, "OriginEngine does not support MySQL versions below 5.1");
                 _connections[IDX_ASYNC][i] = t;
                 ++_connectionCount[IDX_ASYNC];
             }
@@ -356,7 +356,7 @@ class DatabaseWorkerPool
         //! were appended to the transaction will be respected during execution.
         void CommitTransaction(SQLTransaction transaction)
         {
-            #ifdef TRINITY_DEBUG
+            #ifdef ORIGIN_DEBUG
             //! Only analyze transaction weaknesses in Debug mode.
             //! Ideally we catch the faults in Debug mode and then correct them,
             //! so there's no need to waste these CPU cycles in Release mode.
@@ -371,7 +371,7 @@ class DatabaseWorkerPool
                 default:
                     break;
             }
-            #endif // TRINITY_DEBUG
+            #endif // ORIGIN_DEBUG
 
             Enqueue(new TransactionTask(transaction));
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -215,14 +215,14 @@ class boss_festergut : public CreatureScript
                                 if (melee.empty())
                                     break;
 
-                                Unit* target = Trinity::Containers::SelectRandomContainerElement(melee);
+                                Unit* target = ORIGIN::Containers::SelectRandomContainerElement(melee);
                                 ranged.push_back(target);
                                 melee.remove(target);
                             }
 
                             if (!ranged.empty())
                             {
-                                Trinity::Containers::RandomResizeList(ranged, RAID_MODE<uint32>(1, 3, 1, 3));
+                                ORIGIN::Containers::RandomResizeList(ranged, RAID_MODE<uint32>(1, 3, 1, 3));
                                 for (std::list<Unit*>::iterator itr = ranged.begin(); itr != ranged.end(); ++itr)
                                     DoCast(*itr, SPELL_VILE_GAS);
                             }

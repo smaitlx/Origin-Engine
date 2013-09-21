@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -112,14 +112,14 @@ void AuctionHouseMgr::SendAuctionWonMail(AuctionEntry* auction, SQLTransaction& 
         logGmTrade = AccountMgr::HasPermission(bidderAccId, RBAC_PERM_LOG_GM_TRADE, realmID);
 
         if (logGmTrade && !sObjectMgr->GetPlayerNameByGUID(bidderGuid, bidderName))
-            bidderName = sObjectMgr->GetTrinityStringForDBCLocale(LANG_UNKNOWN);
+            bidderName = sObjectMgr->GetORIGINStringForDBCLocale(LANG_UNKNOWN);
     }
 
     if (logGmTrade)
     {
         std::string ownerName;
         if (!sObjectMgr->GetPlayerNameByGUID(auction->owner, ownerName))
-            ownerName = sObjectMgr->GetTrinityStringForDBCLocale(LANG_UNKNOWN);
+            ownerName = sObjectMgr->GetORIGINStringForDBCLocale(LANG_UNKNOWN);
 
         uint32 ownerAccId = sObjectMgr->GetPlayerAccountIdByGUID(auction->owner);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -16,7 +16,7 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/// \addtogroup Trinityd Trinity Daemon
+/// \addtogroup ORIGINd ORIGIN Daemon
 /// @{
 /// \file
 
@@ -31,15 +31,15 @@
 #include "Log.h"
 #include "Master.h"
 
-#ifndef _TRINITY_CORE_CONFIG
-# define _TRINITY_CORE_CONFIG  "worldserver.conf"
+#ifndef _ORIGIN_ENGINE_CONFIG
+# define _ORIGIN_ENGINE_CONFIG  "worldserver.conf"
 #endif
 
 #ifdef _WIN32
 #include "ServiceWin32.h"
 char serviceName[] = "worldserver";
-char serviceLongName[] = "TrinityCore world service";
-char serviceDescription[] = "TrinityCore World of Warcraft emulator world service";
+char serviceLongName[] = "OriginEngine world service";
+char serviceDescription[] = "OriginEngine World of Warcraft emulator world service";
 /*
  * -1 - not in service mode
  *  0 - stopped
@@ -69,11 +69,11 @@ void usage(const char* prog)
 #endif
 }
 
-/// Launch the Trinity server
+/// Launch the ORIGIN server
 extern int main(int argc, char** argv)
 {
     ///- Command line parsing to get the configuration file name
-    char const* cfg_file = _TRINITY_CORE_CONFIG;
+    char const* cfg_file = _ORIGIN_ENGINE_CONFIG;
     int c = 1;
     while (c < argc)
     {
@@ -144,7 +144,7 @@ extern int main(int argc, char** argv)
     // at sMaster return function exist with codes
     // 0 - normal shutdown
     // 1 - shutdown at error
-    // 2 - restart command used, this code can be used by restarter for restart Trinityd
+    // 2 - restart command used, this code can be used by restarter for restart ORIGINd
 
     return ret;
 }

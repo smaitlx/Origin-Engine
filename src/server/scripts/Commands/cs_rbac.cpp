@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2013 OriginEngine <http://www.OriginEngine.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -289,7 +289,7 @@ public:
         handler->PSendSysMessage(LANG_RBAC_GROUP_LIST_HEADER, command->rbac->GetId(), command->rbac->GetName().c_str());
         RBACGroupContainer const& groups = command->rbac->GetGroups();
         if (groups.empty())
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
         else
         {
             for (RBACGroupContainer::const_iterator it = groups.begin(); it != groups.end(); ++it)
@@ -430,7 +430,7 @@ public:
         handler->PSendSysMessage(LANG_RBAC_ROLE_LIST_HEADER_GRANTED, command->rbac->GetId(), command->rbac->GetName().c_str());
         RBACGroupContainer const& granted = command->rbac->GetGrantedRoles();
         if (granted.empty())
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
         else
         {
             for (RBACRoleContainer::const_iterator it = granted.begin(); it != granted.end(); ++it)
@@ -443,7 +443,7 @@ public:
         handler->PSendSysMessage(LANG_RBAC_ROLE_LIST_HEADER_DENIED, command->rbac->GetId(), command->rbac->GetName().c_str());
         RBACGroupContainer const& denied = command->rbac->GetDeniedRoles();
         if (denied.empty())
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
         else
         {
             for (RBACRoleContainer::const_iterator it = denied.begin(); it != denied.end(); ++it)
@@ -584,7 +584,7 @@ public:
         handler->PSendSysMessage(LANG_RBAC_PERM_LIST_HEADER_GRANTED, command->rbac->GetId(), command->rbac->GetName().c_str());
         RBACPermissionContainer const& granted = command->rbac->GetGrantedPermissions();
         if (!granted.any())
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
         else
         {
             for (uint32 i = 0; i < RBAC_PERM_MAX; ++i)
@@ -598,7 +598,7 @@ public:
         handler->PSendSysMessage(LANG_RBAC_PERM_LIST_HEADER_DENIED, command->rbac->GetId(), command->rbac->GetName().c_str());
         RBACPermissionContainer const& denied = command->rbac->GetDeniedPermissions();
         if (!denied.any())
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
         else
         {
             for (uint32 i = 0; i < RBAC_PERM_MAX; ++i)
@@ -627,7 +627,7 @@ public:
         handler->PSendSysMessage(LANG_RBAC_PERM_LIST_GLOBAL, command->rbac->GetId(), command->rbac->GetName().c_str());
         RBACPermissionContainer const& permissions = command->rbac->GetPermissions();
         if (!permissions.any())
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
         else
         {
             for (uint32 i = 0; i < RBAC_PERM_MAX; ++i)
@@ -652,7 +652,7 @@ public:
         if (!id)
         {
             RBACGroupsContainer const& groups = sAccountMgr->GetRBACGroupList();
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_GROUPS_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_GROUPS_HEADER));
             for (RBACGroupsContainer::const_iterator it = groups.begin(); it != groups.end(); ++it)
             {
                 RBACGroup const* group = it->second;
@@ -669,12 +669,12 @@ public:
                 return false;
             }
 
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_GROUPS_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_GROUPS_HEADER));
             handler->PSendSysMessage(LANG_RBAC_LIST_ELEMENT, group->GetId(), group->GetName().c_str());
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_ROLES_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_ROLES_HEADER));
             RBACRoleContainer const& roles = group->GetRoles();
             if (roles.empty())
-                handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+                handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
             else
             {
                 for (RBACRoleContainer::const_iterator it = roles.begin(); it != roles.end(); ++it)
@@ -697,7 +697,7 @@ public:
         if (!id)
         {
             RBACRolesContainer const& roles = sAccountMgr->GetRBACRoleList();
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_ROLES_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_ROLES_HEADER));
             for (RBACRolesContainer::const_iterator it = roles.begin(); it != roles.end(); ++it)
             {
                 RBACRole const* role = it->second;
@@ -714,12 +714,12 @@ public:
                 return false;
             }
 
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_ROLES_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_ROLES_HEADER));
             handler->PSendSysMessage(LANG_RBAC_LIST_ELEMENT, role->GetId(), role->GetName().c_str());
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_PERMISSIONS_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_PERMISSIONS_HEADER));
             RBACPermissionContainer const& permissions = role->GetPermissions();
             if (!permissions.any())
-                handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_EMPTY));
+                handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_EMPTY));
             else
             {
                 for (uint32 i = 0; i < RBAC_PERM_MAX; ++i)
@@ -743,7 +743,7 @@ public:
         if (!id)
         {
             RBACPermissionsContainer const& permissions = sAccountMgr->GetRBACPermissionList();
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_PERMISSIONS_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_PERMISSIONS_HEADER));
             for (RBACPermissionsContainer::const_iterator it = permissions.begin(); it != permissions.end(); ++it)
             {
                 RBACPermission const* permission = it->second;
@@ -760,7 +760,7 @@ public:
                 return false;
             }
 
-            handler->PSendSysMessage("%s", handler->GetTrinityString(LANG_RBAC_LIST_PERMISSIONS_HEADER));
+            handler->PSendSysMessage("%s", handler->GetORIGINString(LANG_RBAC_LIST_PERMISSIONS_HEADER));
             handler->PSendSysMessage(LANG_RBAC_LIST_ELEMENT, permission->GetId(), permission->GetName().c_str());
         }
 
